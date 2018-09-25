@@ -1,0 +1,22 @@
+image: rocker/verse:3.4.1
+
+before_script:
+
+  - R -e "install.packages('car',repos='http://cran.r-project.org')"
+  - R -e "install.packages('RCurl',repos='http://cran.r-project.org')"
+  - R -e "install.packages('dummies',repos='http://cran.r-project.org')"
+  - R -e "install.packages('dplyr',repos='http://cran.r-project.org')"
+  - R -e "install.packages('installr',repos='http://cran.r-project.org')"
+  - R -e "install.packages('Rcmdr',repos='http://cran.r-project.org')"
+  - R -e "install.packages('jsonlite',repos='http://cran.r-project.org')"
+
+
+pages:
+  stage: deploy
+  script:
+  - Rscript -e "bookdown::render_book('index.Rmd', 'all', output_dir = 'public')"
+  artifacts:
+    paths:
+    - public
+  only:
+  - master
