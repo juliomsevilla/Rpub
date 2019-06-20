@@ -1,9 +1,4 @@
----
-output:
-  html_document: default
-  pdf_document: default
----
-# Markdown, $\LaTeX{}$ y Pandoc {#publication}
+# Markdown, LaTeX y Pandoc {#publication}
 
 ## La escritura con Markdown
 
@@ -70,11 +65,11 @@ install.packages('rmarkdown')
 tinytex::install_tinytex()
 ```
 
-## El lenguaje $\LaTeX{}$ 
+## El lenguaje LaTeX 
 
-Anteriormente hemos apuntado que para generar el formato `pdf` es necesario pasar por un paso previo, instalar `LaTeX`, en concreto el sistema que nos permite su compilación. $\LaTeX{}$ es un sistema de preparación de documentos por comandos de bajo nivel, usado para escribir grandes textos científicos y técnicos, que fue desarrollado en 1985 por Leslie Lamport y que a diferencia de los procesadores de texto actuales WYSIWYG, permite al escritor centrarse en el contenido sin tener que preocuparse por el formato, algo que realizará el sistema $\LaTeX{}$.
+Anteriormente hemos apuntado que para generar el formato `pdf` es necesario pasar por un paso previo, instalar `LaTeX`, en concreto el sistema que nos permite su compilación. LaTeX es un sistema de preparación de documentos por comandos de bajo nivel, usado para escribir grandes textos científicos y técnicos, que fue desarrollado en 1985 por Leslie Lamport y que a diferencia de los procesadores de texto actuales WYSIWYG, permite al escritor centrarse en el contenido sin tener que preocuparse por el formato, algo que realizará el sistema LaTeX.
 
-A grandes rasgos, un documento en $\LaTeX{}$ se compone de la siguiente estructura:
+A grandes rasgos, un documento en LaTeX se compone de la siguiente estructura:
 
 ```{r eval=FALSE}
 \documentclass[opciones]{clase}
@@ -87,9 +82,9 @@ Documento
 
 En las opciones se definirán al menos el tamaño del papel (por ejemplo, `a4paper`) y el tamaño de letra (por ejemplo, `12pt`).
 
-Si queremos ahondar más en la escritura con $\LaTeX{}$ recomendamos la lectura del documento [https://www.uv.es/~ivorra/Latex/LaTeX.pdf]("Preparación de Documentos con $\LaTEx{}$") de Carlos Ivorra.
+Si queremos ahondar más en la escritura con LaTeX recomendamos la lectura del documento [https://www.uv.es/~ivorra/Latex/LaTeX.pdf]("Preparación de Documentos con LaTeX") de Carlos Ivorra.
 
-En un documento de Rmarkdown, la generación de un documento en $\LaTeX{}$ es muy sencillo si tenemos ya instaladas las librerias citadas antes. Con ello, solo deberemos configurar el encabezado de nuestro documento como: 
+En un documento de Rmarkdown, la generación de un documento en LaTeX es muy sencillo si tenemos ya instaladas las librerias citadas antes. Con ello, solo deberemos configurar el encabezado de nuestro documento como: 
 
 ```{r, eval=FALSE}
 ---

@@ -1,6 +1,6 @@
 # Prueba de nivel {#quiz}
 
-La superación del curso supone la correcta realización en tiempo (**fecha límite XX/XX7XX**) y forma de un ejercicio práctico y su entrega a lucia.rodriguez@sc.uhu.es. La entrega será el script generado y el resultado en HTML
+La superación del curso supone la correcta realización en tiempo (**fecha límite XX/XXXX**) y forma de un ejercicio práctico y su entrega a lucia.rodriguez@sc.uhu.es. La entrega será el script generado y el resultado en HTML
 
 **Ejercicios**
 
@@ -11,9 +11,10 @@ La superación del curso supone la correcta realización en tiempo (**fecha lím
 5. Exportar el resultado a HTML, pdf y tex y enviar junto al script generado
 
 
-Para la consecuciaón adecuada del trabajo, es recomendable visitar los sigueintes enlaces:
+Para la consecución adecuada del trabajo, es recomendable visitar los sigueintes enlaces:
 
 https://juliomsevilla.gitlab.io/Rintro
+
 https://juliomsevilla.gitlab.io/Rstats
 
 

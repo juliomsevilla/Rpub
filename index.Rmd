@@ -33,7 +33,7 @@ El proceso científico consta de dos etapas claramente diferenciadas pero a la v
 
 R es un lenguaje que originalmente se pensó por y para estadísticos. Hoy, se ha convertido en uno de los cinco principales lenguajes de programación no siendo ninguno de estos cinco lenguajes puramente estadísticos, lo cual nos lleva a pensar que quizás ya no estemos ante lo que se pensó, y que ese "niño" ha crecido y se está haciendo "mayor."
 
-El presente documento es un manual básico sobre la presentación de resultados científicos con R, el procesado de los documentos y su exportación a formatos estándares de publicación como $\LaTeX{}$.
+El presente documento es un manual básico sobre la presentación de resultados científicos con R, el procesado de los documentos y su exportación a formatos estándares de publicación como LaTeX.
 
 
 
