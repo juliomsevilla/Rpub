@@ -23,7 +23,7 @@ updateR()
 ## El Sistema R
 Una vez instalamos R, nos encontramos con una interfaz gráfica de usuario que nos puede resultar "anticuada" sobre todo si trabajamos con los sistemas operativos más recientes. Este aspecto no debe confundirnos de cuál es la visión del sistema R: un lenguaje de programación con una clara vocación estadístico-matemática.
 
-![R](https://egret.psychol.cam.ac.uk/statistics/R/output/R_startup.png)
+![](https://egret.psychol.cam.ac.uk/statistics/R/output/R_startup.png)
 
 Dentro de R encontramos una pantalla situada a la izquierda (por defecto) en la que en el prompt, escribiremos los comandos a ejecutar. Los resultados de estos comandos aparecerán a continuación de los mismos en este mismo sector. En esta pantalla, aparece también la versión de R que tenemos instalada, y ciertos comandos como la forma de consultar la ayuda (`help()`) o ejemplos básicos de trabajo con R (`demo()`).
 
@@ -55,13 +55,13 @@ Rcommander [@R-Rcmdr] es una interfaz gráfica de R, diseñada para realizar los
 
 Rcommander se instala como cualquier paquete, por ejemplo mediante el comando `install.packages (“Rcmdr”)` y lo cargaremos con `library(Rcmdr)`.
 
-![Rcommander](http://socserv.mcmaster.ca/jfox/Misc/Rcmdr/Rcmdr-screenshot.jpg)
+![](http://socserv.mcmaster.ca/jfox/Misc/Rcmdr/Rcmdr-screenshot.jpg)
 
 ### RStudio
 
 RStudio es un entorno de desarrollo integrado (IDE) para R y es un paso más allá de Rcommander. En concreto y según la definición de sus autores se trata de una consola, editor de sintaxis que apoya la ejecución de código, así como herramientas para el trazado, la depuración y la gestión del espacio de trabajo, es decir un completo gestor del entorno R que se ha convertido en parte inseparable del mismo: si alguien usa R seguro, que con un 95% de probabilidad lo hace con RStudio.
 
-![RStudio](https://www.rstudio.com/wp-content/uploads/2014/04/rstudio-windows.png)
+![](https://www.rstudio.com/wp-content/uploads/2014/04/rstudio-windows.png)
 
 La instalación de RStudio se realiza desde su página web [https://www.rstudio.com/products/RStudio/](https://www.rstudio.com/products/RStudio/) y no difiere de una instalación estándar de los sistemas operativos habituales.
 

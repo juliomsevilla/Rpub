@@ -7,7 +7,7 @@ site: bookdown::bookdown_site
 documentclass: book
 bibliography: ["packages.bib", "bibliografia.bib"]
 biblio-style: apalike
-link-citations: true
+link-citations: yes
 favicon: "favicon.ico"
 output:
   bookdown::gitbook:
