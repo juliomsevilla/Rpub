@@ -5,7 +5,7 @@ description: "En este libro haremos una introducción al lenguaje de programaci�
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
-bibliography: ["packages.bib", "bibliography.bib"]
+bibliography: ["packages.bib", "bibliografia.bib"]
 biblio-style: apalike
 link-citations: yes
 favicon: "favicon.ico"
@@ -14,8 +14,8 @@ output:
     config:
       toc:
         after: |
-          Ir a <a href="http://www.epidom.es/">EPIDOM</a>
-      edit: https://gitlab.com/juliomsevilla/Rintro/edit/master/%s
+          Ir a <a href="http://www.jsevilla.es/">jsevilla.es</a>
+      edit: https://gitlab.com/juliomsevilla/rpub/edit/master/%s
     citation_package: natbib
 ---
 
@@ -33,7 +33,7 @@ El proceso científico consta de dos etapas claramente diferenciadas pero a la v
 
 R es un lenguaje que originalmente se pensó por y para estadísticos. Hoy, se ha convertido en uno de los cinco principales lenguajes de programación no siendo ninguno de estos cinco lenguajes puramente estadísticos, lo cual nos lleva a pensar que quizás ya no estemos ante lo que se pensó, y que ese "niño" ha crecido y se está haciendo "mayor."
 
-El presente documento es un manual básico sobre la presentación de resultados científicos con R, el procesado de los documentos y su exportación a formatos estándares de publicación como \LaTex{}.
+El presente documento es un manual básico sobre la presentación de resultados científicos con R, el procesado de los documentos y su exportación a formatos estándares de publicación como $\LaTeX{}$.
 
 
 

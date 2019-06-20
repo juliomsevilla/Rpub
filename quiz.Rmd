@@ -1,0 +1,20 @@
+# Prueba de nivel {#quiz}
+
+La superación del curso supone la correcta realización en tiempo (**fecha límite XX/XX7XX**) y forma de un ejercicio práctico y su entrega a lucia.rodriguez@sc.uhu.es. La entrega será el script generado y el resultado en HTML
+
+**Ejercicios**
+
+1. Crear un script de R y guardarlo
+2. Cargar los datos situados en la ruta https://gitlab.com/juliomsevilla/Rintro/raw/master/data/parc.csv y llamar al objeto datos
+3. Calcular una regresión lineal  `VSC` con `HD` y hacer un diagnóstico gráfico del mismo
+4. Redactar unos breves apartados de introducción, metodología, conclusiones y bibliografía que se considere necesaria.
+5. Exportar el resultado a HTML, pdf y tex y enviar junto al script generado
+
+
+Para la consecuciaón adecuada del trabajo, es recomendable visitar los sigueintes enlaces:
+
+https://juliomsevilla.gitlab.io/Rintro
+https://juliomsevilla.gitlab.io/Rstats
+
+
+
