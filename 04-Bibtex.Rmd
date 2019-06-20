@@ -1,9 +1,10 @@
 # Gestión de bibliografías con Bibtex {#bibtex}
 
 ## Sobre Bibtex
-[Bibtex](http://www.bibtex.org/) es una herramienta auxiliar de LaTeX, diseñada para facilitar el manejo de la bibliografía. Su uso es muy sencillo: a modo de base de datos, en un fichero con extensión `bib` alamacenaremos todas nuestras referencias bibliográficas, independientemente de que las usemos o no en el documento actual, algo que es una gran ventaja, pues podremos crear nuestro fichero, único, de referencias bibliográficas, que usaremos en todos nuestros proyectos. 
+[Bibtex](http://www.bibtex.org/) es una herramienta auxiliar de LaTeX, diseñada para facilitar el manejo de la bibliografía y es un estandar de almacenamiento de referencias. Su uso es muy sencillo: a modo de base de datos, en un fichero con extensión `bib` alamacenaremos todas nuestras referencias bibliográficas, independientemente de que las usemos o no en el documento actual, algo que es una gran ventaja, pues podremos crear nuestro fichero, único, de referencias bibliográficas, que usaremos en todos nuestros proyectos. 
 
-la cita de la fuente es muy sencilla:simplemente, en nuestro documento LaTeX, deberemos llamar al identificador de la referencia, para que el compilador la muestre de forma adecuada. Veamos unos ejemplos:
+
+La cita de la fuente es muy sencilla:simplemente, en nuestro documento LaTeX, deberemos llamar al identificador de la referencia, para que el compilador la muestre de forma adecuada. Veamos unos ejemplos:
 ```{r, eval=FALSE}
 
 @Manual{R-base,

@@ -6,7 +6,6 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: ["paquetes.bib", "bibliografia.bib"]
-biblio-style: apalike
 link-citations: yes
 favicon: "favicon.ico"
 output:
@@ -16,7 +15,6 @@ output:
         after: |
           Ir a <a href="http://www.jsevilla.es/">jsevilla.es</a>
       edit: https://gitlab.com/juliomsevilla/rpub/edit/master/%s
-    citation_package: natbib
 ---
 
 # Introducción {-}
