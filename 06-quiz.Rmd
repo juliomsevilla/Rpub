@@ -11,7 +11,7 @@ La superación del curso supone la correcta realización en tiempo (**fecha lím
 5. Exportar el resultado a HTML, pdf y tex y enviar junto al script generado
 
 
-Para la consecución adecuada del trabajo, es recomendable visitar los sigueintes enlaces:
+Para la consecución adecuada del trabajo, es recomendable visitar los siguientes enlaces:
 
 https://juliomsevilla.gitlab.io/Rintro
 
