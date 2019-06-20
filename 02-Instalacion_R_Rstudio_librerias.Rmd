@@ -10,7 +10,7 @@ Algo bastante interesante de R es su portabilidad. R, una vez instalado en un PC
 ## Actualización de R
 Cada cierto tiempo es recomendable realizar la actualización de R. Generalmente, un par de veces al año, el sistema es actualizado, misión que lleva a cabo un reducido grupo de especialistas (conocido como el R Core team) y los paquetes (que en próximos capítulos explicaremos) se adaptan a la nueva actualización, dejando, algunas veces de ser útiles en las versiones obsoletas.
 
-La actualización de R puede ser automatizada o realizarse de forma manual si bien este último recurso no es la mejor opción debido a que se actualizará creando una nueva instalación manteniendo la anterior. Este echo se debe a que en la actualidad es la única forma de que no perdamos nuestras configuraciones y, sobre todo, la posible incompatibilidad con alguno de los paquetes que tengamos instalados.Para realizar una actualización automática del sistema, podemos usar la siguiente sentencia usando el paquete [@R-installr] (despues veremos el lugar de ejecutarla):
+La actualización de R puede ser automatizada o realizarse de forma manual si bien este último recurso no es la mejor opción debido a que se actualizará creando una nueva instalación manteniendo la anterior. Este echo se debe a que en la actualidad es la única forma de que no perdamos nuestras configuraciones y, sobre todo, la posible incompatibilidad con alguno de los paquetes que tengamos instalados.Para realizar una actualización automática del sistema, podemos usar la siguiente sentencia usando el paquete `installr` [@R-installr] (despues veremos el lugar de ejecutarla):
 
 ```{r eval = FALSE, message=F, warning=F}
 if(!require(installr)) {
