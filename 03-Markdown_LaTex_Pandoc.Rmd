@@ -6,7 +6,7 @@ Markdown es un lenguaje de marcado ligero ideado en 2004 por John Gruber, con la
 
 ![](https://gitlab.com/juliomsevilla/Rpub/raw/master/images/markdown.png)
 
-En este punto nos puede asaltar la duda ¿Markdown cubre todo el espectro que cubre `HTML`? Sí y no, porque si no lo cubre, tan solo tienes que escribir la parte de HTML` separado una línea del siguiente párrafo en Markdown.
+En este punto nos puede asaltar la duda ¿Markdown cubre todo el espectro que cubre `HTML`? Sí y no, porque si no lo cubre, tan solo tienes que escribir la parte de `HTML` separado una línea del siguiente párrafo en Markdown.
 
 Trabajar con Markdown, tiene infinidad de ventajas, pero es especialmente adecuado para aquellas personas que publican contenido en la web de manera regular. Entre otras ventajas cabe citar que cuando te acostumbras a la sintaxis la generación de texto es extremadamente rápido, es muy sencillo de leer, no tendremos el problema de errores por no cerrar adecuadamente las etiquetas `HTML` y su compilación con software como [`Pandoc`](https://pandoc.org/) permite la exportación simple a infinidad de formatos basados en texto.
 

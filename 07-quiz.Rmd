@@ -1,6 +1,6 @@
 # Prueba de nivel {#quiz}
 
-La superación del curso supone la correcta realización en tiempo (**fecha límite XX/XXXX**) y forma de un ejercicio práctico y su entrega a lucia.rodriguez@sc.uhu.es. La entrega será el script generado y el resultado en HTML
+La superación del curso supone la correcta realización en tiempo (**fecha límite 24/07/2019**) y forma de un ejercicio práctico y su entrega a lucia.rodriguez@sc.uhu.es. La entrega será el script generado y el resultado en HTML
 
 **Ejercicios**
 
