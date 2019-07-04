@@ -5,7 +5,7 @@ En este capítulo, veremos otras formas de publicar en R pero no las únicas. Si
 ## Flexdashboard 
 La libreria [flexdashboard](https://rmarkdown.rstudio.com/flexdashboard/) consiste en un conjunto de utilidades con las que generaremos facilmente cuadros de mando dinámicos. Su uso es bien sencillo; una vez cargada la libreria, cada título que definamos se convertirá en un marco donde podremos depositar la información a mostrar:
 
-![](https://gitlab.com/juliomsevilla/Rpub/raw/master/images/flexdashboar.png)
+![](https://gitlab.com/juliomsevilla/Rpub/raw/master/images/flexdash.png)
 
 
 ## Shinny
