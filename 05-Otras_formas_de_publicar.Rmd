@@ -5,7 +5,8 @@ En este capítulo, veremos otras formas de publicar en R pero no las únicas. Si
 ## Flexdashboard 
 La libreria [flexdashboard](https://rmarkdown.rstudio.com/flexdashboard/) consiste en un conjunto de utilidades con las que generaremos facilmente cuadros de mando dinámicos. Su uso es bien sencillo; una vez cargada la libreria, cada título que definamos se convertirá en un marco donde podremos depositar la información a mostrar:
 
-![](https://gitlab.com/juliomsevilla/Rpub/raw/master/images/flexdashboard.png)
+![](https://gitlab.com/juliomsevilla/Rpub/raw/master/images/flexdashboar.png)
+
 
 ## Shinny
 Shiny se basa en el uso de Programación Reactiva (Reactive Programming), esto es: existen unos valores que pueden variar en el tiempo y que son registrados por unas expresiones que posteriormente las reproducen. Junto a este motor de razonamiento, incorpora adaptadas los clásicos elementos HTML (botones, cuadros de texto, barras de desplazamiento,…) junto con las potentes gráficas de R y su estructura de datos.Básicamente se compone de dos ficheros que se crean en nuestro directorio local: `ui.R`, que gestiona la salida visual y el aspecto de la aplicación y `server.R` con las instrucciones para que la misma función, siendo en esta última donde se embebe el motor de cálculo en realizado en R. En las últimas versiones del paquete, ambos ficheros vienen embebidos en uno solo `app.R`. Estos archivos son publicados en nuestro servidor web o en las distintas plataformas que lo interpreten como GitHub.
