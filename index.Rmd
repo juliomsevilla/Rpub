@@ -33,6 +33,6 @@ R es un lenguaje que originalmente se pensó por y para estadísticos. Hoy, se h
 
 El presente documento es un manual básico sobre la presentación de resultados científicos con R, el procesado de los documentos y su exportación a formatos estándares de publicación como LaTeX.
 
-
+Los apuntes pueden ser descargados [desde esta dirección](https://gitlab.com/juliomsevilla/rpub/raw/99c5b83ce24965690b12112a9a95a878f5504cc4/Apuntes/RPUB.zip?inline=false) para ser usados sin estar conectado
 
 
