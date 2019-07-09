@@ -65,6 +65,13 @@ install.packages('rmarkdown')
 tinytex::install_tinytex()
 ```
 
+
+En ocasiones, la instalación de `TinyTeX` deriva en problemas y no se pueden compilar los documentos. Si esto ocurre, deberemos instalar [MiKTeX](https://miktex.org/) (en el caso de que nuestro sistema operativo sea Windows). Al hacerlo, deberemos indicarle que instale todas las aplicaciones necesarias:
+
+![](https://gitlab.com/juliomsevilla/Rpub/raw/master/images/Miktex_1.png)
+
+Si ya tenemos este software instalado en nuestro PC, deberemos ir a la configuración y en Settings, elegir la opción `Always install missing packages on-the-fly`. 
+
 ## El lenguaje LaTeX 
 
 Anteriormente hemos apuntado que para generar el formato `pdf` es necesario pasar por un paso previo, instalar `LaTeX`, en concreto el sistema que nos permite su compilación. LaTeX es un sistema de preparación de documentos por comandos de bajo nivel, usado para escribir grandes textos científicos y técnicos, que fue desarrollado en 1985 por Leslie Lamport y que a diferencia de los procesadores de texto actuales WYSIWYG, permite al escritor centrarse en el contenido sin tener que preocuparse por el formato, algo que realizará el sistema LaTeX.
