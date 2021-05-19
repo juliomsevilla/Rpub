@@ -4,7 +4,7 @@
 
 Markdown es un lenguaje de marcado ligero ideado en 2004 por John Gruber, con la visión de crear un lenguaje sencillo, fácil de leer y de escribir, aprovechando las ventajas del lenguaje `HTML` pero eliminando sus inconvenientes, como por ejemplo las etiquetas, que tanto engorran el código. Pongamonos en situación: si estamos escribiendo en `HTML`, para añadir una palabra en negrita deberíamos escribir `<strong>importante</strong>` mientras que si estamos escribiendo en `Markdown`nos bastaría poner `**importante**` para que cuando lo compilemos, se muestre de esta forma. Huelga decir, que en un procesador de textos al uso deberemos dejar de escribir, coger el ratón, pulsar en el botón de la negrita, volver a escribir, de nuevo coger el ratón, ir a la barra de herramientas, desactivar el formato de negrita y continuar escribiendo (…). A continuación podemos ver algunos ejemplos de la notación de este lenguaje:
 
-![](https://gitlab.com/juliomsevilla/Rpub/raw/master/images/markdown.png)
+![](https://github.com/juliomsevilla/Rpub/raw/master/images/markdown.png)
 
 En este punto nos puede asaltar la duda ¿Markdown cubre todo el espectro que cubre `HTML`? Sí y no, porque si no lo cubre, tan solo tienes que escribir la parte de `HTML` separado una línea del siguiente párrafo en Markdown.
 
@@ -15,7 +15,7 @@ Rmarkdown es un framework derivado de markdown que nos va a permitir, a la vez, 
 
 Para trabajar con estos tipos de documentos, lo más recomendable es el uso de RStudio, que en sus últimas versiones, viene equipado con todos los elementos necesarios para ejecutar y compilar correctamente estos documentos.
 
-La composición de un documento en Rmarkdown es muy sencilla. Para ello tendremos las opción simple, si estamos en RStudio de File>New File>R Markdown, que nos generará una plantilla con los elementos básicos para la confección del documento. En ella, destacan dos tres elementos fundamentales:
+La composición de un documento en Rmarkdown es muy sencilla. Para ello tendremos las opción simple, si estamos en RStudio de File>New File>R Markdown, que nos generará una plantilla con los elementos básicos para la confección del documento. En ella, destacan los tres elementos fundamentales:
 
 - El encabezado YAML, donde se definen las características del documento:
 ```{r, eval=FALSE}
@@ -44,7 +44,8 @@ Cuando compilemos el documento, previo guardado en nuestra computadora, a traves
 ## Pandoc y la conversión entre formatos.
 Pandoc es una herramienta de libre y de código abierto, creado porJohn MacFarlane y que permite la conversión entre múltiples formatos de marcado a partir de un motor de renderizado común:
 
-![](https://gitlab.com/juliomsevilla/Rpub/raw/master/images/diagram.png)
+![](https://github.com/juliomsevilla/Rpub/raw/master/images/diagram.png)
+
 
 Basicamente, el trabajo con pandoc consiste en que, una vez tengamos creado el documento, para lo cual recomendamos se haga en Markdown, el motor de renderizado de Pandoc lo convertira en el formato que deseemos. 
 
@@ -68,7 +69,7 @@ tinytex::install_tinytex()
 
 En ocasiones, la instalación de `TinyTeX` deriva en problemas y no se pueden compilar los documentos. Si esto ocurre, deberemos instalar [MiKTeX](https://miktex.org/) (en el caso de que nuestro sistema operativo sea Windows). Al hacerlo, deberemos indicarle que instale todas las aplicaciones necesarias:
 
-![](https://gitlab.com/juliomsevilla/Rpub/raw/master/images/Miktex_1.png)
+![](https://github.com/juliomsevilla/Rpub/raw/master/images/Miktex_1.png)
 
 Si ya tenemos este software instalado en nuestro PC, deberemos ir a la configuración y en Settings, elegir la opción `Always install missing packages on-the-fly`. 
 

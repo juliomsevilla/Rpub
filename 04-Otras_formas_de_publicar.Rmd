@@ -1,21 +1,14 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Otras de formas de publicación en R {#other_pubs}
 
 En este capítulo, veremos otras formas de publicar en R pero no las únicas. Si es de interés, recomendamos visitar la web [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/basics.html), donde hay abundante material sobre el tema.
 
-## Flexdashboard 
-La libreria [flexdashboard](https://rmarkdown.rstudio.com/flexdashboard/) consiste en un conjunto de utilidades con las que generaremos facilmente cuadros de mando dinámicos. Su uso es bien sencillo; una vez cargada la libreria, cada título que definamos se convertirá en un marco donde podremos depositar la información a mostrar:
-
-![](https://gitlab.com/juliomsevilla/Rpub/raw/master/images/flexdash.png)
-
-
-## Shinny
-Shiny se basa en el uso de Programación Reactiva (Reactive Programming), esto es: existen unos valores que pueden variar en el tiempo y que son registrados por unas expresiones que posteriormente las reproducen. Junto a este motor de razonamiento, incorpora adaptadas los clásicos elementos HTML (botones, cuadros de texto, barras de desplazamiento,…) junto con las potentes gráficas de R y su estructura de datos.Básicamente se compone de dos ficheros que se crean en nuestro directorio local: `ui.R`, que gestiona la salida visual y el aspecto de la aplicación y `server.R` con las instrucciones para que la misma función, siendo en esta última donde se embebe el motor de cálculo en realizado en R. En las últimas versiones del paquete, ambos ficheros vienen embebidos en uno solo `app.R`. Estos archivos son publicados en nuestro servidor web o en las distintas plataformas que lo interpreten como GitHub.
-
-![](https://gitlab.com/juliomsevilla/Rpub/raw/master/images/shinny1.png)
-![](https://gitlab.com/juliomsevilla/Rpub/raw/master/images/shinny2.png)
-
-Las posibilidades de Shiny se amplían al admitir incorporaciones al código nativo de todos los elementos que actualmente conforman los ecosistemas HTML, CSS y Javascript, lo que implica que los desarrollos que se puedan hacer con esta herramienta son casi ilimitados. Esto la convierte en una herramienta muy poderosa para la construcción de cuadros de mando y para mostrar los resultados de nuestros desarrollos usando las capacidades analíticas de R, de forma que el receptor de nuestra información pueda interactuar fácilmente con ella (por ejemplo [como en este caso](https://juliomsevilla.shinyapps.io/ModeloGlobulusHuelva/)).
-
+## Notebooks
+Un notebook es un documento de RMarkdown que puede ejecutar trozos de código de forma independiente y de forma interactiva. Para crear un documento, lo podremos hacer facilemnte desde RStudio en File>New File>R Notebook. Una vez creado contaremos con un fichero `*.rmd` que contendrá todas nuestras partes de código y texto y que, una vez lo guardemos, nos generará un nuevo fichero, con extensión `*.nb.html` que contendrá el notebook en un formato amigable para ejecutar.
 
 ## Presentaciones
 Además de generar reportes en pdf, html, docx,..., cuando generamos nuestro fichero `.Rmd` podemos indicarle que la salida sea del tipo presentación. En este caso, cada uno de los títulos que definamos, se convertirá en un slide de la presentación, la cual puede, evidentemente, contener fragmentos de códigos ejecutables, tal y como se han descrito en estos apuntes. Podemos ver un ejemplo de una presentación [en este enlace](https://juliomsevilla.gitlab.io/rsentinel).
@@ -73,5 +66,27 @@ Si deseamos hacer en Github, deberemos realizar lo sigueinte:
 - Crear dentro del directorio `docs` un archivo `.nojekyll`, que, si estamos en Windows, podremos hacer incluso con el comando de R `file.create('.nojekyll')`.
 - Finalmente, en Github, tendremos que decirle que nuestro master branch es `\docs\`:
 
-![](https://gitlab.com/juliomsevilla/Rpub/raw/master/images/github_bookdown.png)
+![](https://github.com/juliomsevilla/Rpub/raw/master/images/github_bookdown.png)
+
+
+
+
+## Cuadros de mando
+
+### Flexdashboard 
+La libreria [flexdashboard](https://rmarkdown.rstudio.com/flexdashboard/) consiste en un conjunto de utilidades con las que generaremos facilmente cuadros de mando dinámicos. Su uso es bien sencillo; una vez cargada la libreria, cada título que definamos se convertirá en un marco donde podremos depositar la información a mostrar:
+
+![](https://github.com/juliomsevilla/Rpub/raw/master/images/flexdash.png)
+
+
+### Shinny
+Shiny se basa en el uso de Programación Reactiva (Reactive Programming), esto es: existen unos valores que pueden variar en el tiempo y que son registrados por unas expresiones que posteriormente las reproducen. Junto a este motor de razonamiento, incorpora adaptadas los clásicos elementos HTML (botones, cuadros de texto, barras de desplazamiento,…) junto con las potentes gráficas de R y su estructura de datos.Básicamente se compone de dos ficheros que se crean en nuestro directorio local: `ui.R`, que gestiona la salida visual y el aspecto de la aplicación y `server.R` con las instrucciones para que la misma función, siendo en esta última donde se embebe el motor de cálculo en realizado en R. En las últimas versiones del paquete, ambos ficheros vienen embebidos en uno solo `app.R`. Estos archivos son publicados en nuestro servidor web o en las distintas plataformas que lo interpreten como GitHub.
+
+![](https://github.com/juliomsevilla/Rpub/raw/master/images/shinny1.png)
+![](https://github.com/juliomsevilla/Rpub/raw/master/images/shinny2.png)
+
+Las posibilidades de Shiny se amplían al admitir incorporaciones al código nativo de todos los elementos que actualmente conforman los ecosistemas HTML, CSS y Javascript, lo que implica que los desarrollos que se puedan hacer con esta herramienta son casi ilimitados. Esto la convierte en una herramienta muy poderosa para la construcción de cuadros de mando y para mostrar los resultados de nuestros desarrollos usando las capacidades analíticas de R, de forma que el receptor de nuestra información pueda interactuar fácilmente con ella (por ejemplo [como en este caso](https://juliomsevilla.shinyapps.io/ModeloGlobulusHuelva/)).
+
+
+
 
