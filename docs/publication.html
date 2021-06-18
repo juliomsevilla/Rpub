@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 3 Markdown, LaTeX y Pandoc | Publicación de textos científicos con R</title>
+  <meta name="description" content="Texto introductorio a la redacción y publicación de textos científicos con R y RMarkdown" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 3 Markdown, LaTeX y Pandoc | Publicación de textos científicos con R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Texto introductorio a la redacción y publicación de textos científicos con R y RMarkdown" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 3 Markdown, LaTeX y Pandoc | Publicación de textos científicos con R" />
+  
+  <meta name="twitter:description" content="Texto introductorio a la redacción y publicación de textos científicos con R y RMarkdown" />
+  
+
+<meta name="author" content="Julio M. Sevilla Sánchez" />
+
+
+<meta name="date" content="2021-06-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="install.html"/>
+<link rel="next" href="other-pubs.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Publicación de textos científicos con R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción al lenguaje R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#que-es-r"><i class="fa fa-check"></i><b>1.1</b> ¿Que es R?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#por-qué-usar-r"><i class="fa fa-check"></i><b>1.2</b> ¿Por qué usar R?</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#recursos-sobre-r"><i class="fa fa-check"></i><b>1.3</b> Recursos sobre R</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>2</b> Instalación de R, RStudio y librerias</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="install.html"><a href="install.html#instalación-de-r"><i class="fa fa-check"></i><b>2.1</b> Instalación de R</a></li>
+<li class="chapter" data-level="2.2" data-path="install.html"><a href="install.html#actualización-de-r"><i class="fa fa-check"></i><b>2.2</b> Actualización de R</a></li>
+<li class="chapter" data-level="2.3" data-path="install.html"><a href="install.html#el-sistema-r"><i class="fa fa-check"></i><b>2.3</b> El Sistema R</a></li>
+<li class="chapter" data-level="2.4" data-path="install.html"><a href="install.html#las-librerias-de-r"><i class="fa fa-check"></i><b>2.4</b> Las librerias de R</a></li>
+<li class="chapter" data-level="2.5" data-path="install.html"><a href="install.html#interfaces-gráficas-de-r"><i class="fa fa-check"></i><b>2.5</b> Interfaces gráficas de R</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="install.html"><a href="install.html#rcommander"><i class="fa fa-check"></i><b>2.5.1</b> Rcommander</a></li>
+<li class="chapter" data-level="2.5.2" data-path="install.html"><a href="install.html#rstudio"><i class="fa fa-check"></i><b>2.5.2</b> RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="publication.html"><a href="publication.html"><i class="fa fa-check"></i><b>3</b> Markdown, LaTeX y Pandoc</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="publication.html"><a href="publication.html#la-escritura-con-markdown"><i class="fa fa-check"></i><b>3.1</b> La escritura con Markdown</a></li>
+<li class="chapter" data-level="3.2" data-path="publication.html"><a href="publication.html#rmarkdown"><i class="fa fa-check"></i><b>3.2</b> Rmarkdown</a></li>
+<li class="chapter" data-level="3.3" data-path="publication.html"><a href="publication.html#pandoc-y-la-conversión-entre-formatos."><i class="fa fa-check"></i><b>3.3</b> Pandoc y la conversión entre formatos.</a></li>
+<li class="chapter" data-level="3.4" data-path="publication.html"><a href="publication.html#instalación-de-los-elementos-necesarios"><i class="fa fa-check"></i><b>3.4</b> Instalación de los elementos necesarios</a></li>
+<li class="chapter" data-level="3.5" data-path="publication.html"><a href="publication.html#el-lenguaje-latex"><i class="fa fa-check"></i><b>3.5</b> El lenguaje LaTeX</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="other-pubs.html"><a href="other-pubs.html"><i class="fa fa-check"></i><b>4</b> Otras de formas de publicación en R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="other-pubs.html"><a href="other-pubs.html#notebooks"><i class="fa fa-check"></i><b>4.1</b> Notebooks</a></li>
+<li class="chapter" data-level="4.2" data-path="other-pubs.html"><a href="other-pubs.html#presentaciones"><i class="fa fa-check"></i><b>4.2</b> Presentaciones</a></li>
+<li class="chapter" data-level="4.3" data-path="other-pubs.html"><a href="other-pubs.html#páginas-web-y-libros"><i class="fa fa-check"></i><b>4.3</b> Páginas web y libros</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="other-pubs.html"><a href="other-pubs.html#bookdown"><i class="fa fa-check"></i><b>4.3.1</b> Bookdown</a></li>
+<li class="chapter" data-level="4.3.2" data-path="other-pubs.html"><a href="other-pubs.html#distill"><i class="fa fa-check"></i><b>4.3.2</b> Distill</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="other-pubs.html"><a href="other-pubs.html#cuadros-de-mando"><i class="fa fa-check"></i><b>4.4</b> Cuadros de mando</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="other-pubs.html"><a href="other-pubs.html#flexdashboard"><i class="fa fa-check"></i><b>4.4.1</b> Flexdashboard</a></li>
+<li class="chapter" data-level="4.4.2" data-path="other-pubs.html"><a href="other-pubs.html#shinny"><i class="fa fa-check"></i><b>4.4.2</b> Shinny</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bibtex.html"><a href="bibtex.html"><i class="fa fa-check"></i><b>5</b> Gestión de bibliografías con Bibtex</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="bibtex.html"><a href="bibtex.html#sobre-bibtex"><i class="fa fa-check"></i><b>5.1</b> Sobre Bibtex</a></li>
+<li class="chapter" data-level="5.2" data-path="bibtex.html"><a href="bibtex.html#referencias-bibliográficas-en-rmarkdown."><i class="fa fa-check"></i><b>5.2</b> Referencias bibliográficas en Rmarkdown.</a></li>
+<li class="chapter" data-level="5.3" data-path="bibtex.html"><a href="bibtex.html#la-documentación-de-los-paquetes"><i class="fa fa-check"></i><b>5.3</b> La documentación de los paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="about.html"><a href="about.html"><i class="fa fa-check"></i><b>6</b> Sobre el autor</a></li>
+<li class="chapter" data-level="7" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>7</b> Bibliografía</a></li>
+<li class="divider"></li>
+<li><a href="www.jsevilla.es" target="blank">jsevilla.es</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Publicación de textos científicos con R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="publication" class="section level1" number="3">
+<h1><span class="header-section-number">Capítulo 3</span> Markdown, LaTeX y Pandoc</h1>
+<div id="la-escritura-con-markdown" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> La escritura con Markdown</h2>
+<p>Markdown es un lenguaje de marcado ligero ideado en 2004 por John Gruber, con la visión de crear un lenguaje sencillo, fácil de leer y de escribir, aprovechando las ventajas del lenguaje <code>HTML</code> pero eliminando sus inconvenientes, como por ejemplo las etiquetas, que tanto engorran el código. Pongamonos en situación: si estamos escribiendo en <code>HTML</code>, para añadir una palabra en negrita deberíamos escribir <code>&lt;strong&gt;importante&lt;/strong&gt;</code> mientras que si estamos escribiendo en <code>Markdown</code>nos bastaría poner <code>**importante**</code> para que cuando lo compilemos, se muestre de esta forma. Huelga decir, que en un procesador de textos al uso deberemos dejar de escribir, coger el ratón, pulsar en el botón de la negrita, volver a escribir, de nuevo coger el ratón, ir a la barra de herramientas, desactivar el formato de negrita y continuar escribiendo (…). A continuación podemos ver algunos ejemplos de la notación de este lenguaje:</p>
+<p><img src="images/markdown.png" /></p>
+<p>En este punto nos puede asaltar la duda ¿Markdown cubre todo el espectro que cubre <code>HTML</code>? Sí y no, porque si no lo cubre, tan solo tienes que escribir la parte de <code>HTML</code> separado una línea del siguiente párrafo en Markdown.</p>
+<p>Trabajar con Markdown, tiene infinidad de ventajas, pero es especialmente adecuado para aquellas personas que publican contenido en la web de manera regular. Entre otras ventajas cabe citar que cuando te acostumbras a la sintaxis la generación de texto es extremadamente rápido, es muy sencillo de leer, no tendremos el problema de errores por no cerrar adecuadamente las etiquetas <code>HTML</code> y su compilación con software como <a href="https://pandoc.org/"><code>Pandoc</code></a> permite la exportación simple a infinidad de formatos basados en texto.</p>
+</div>
+<div id="rmarkdown" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Rmarkdown</h2>
+<p>Rmarkdown es un framework derivado de markdown que nos va a permitir, a la vez, ejecutar líneas de código de R y generar multitud de formatos de publicación, listos para imprimir y/o compartir con los interesados.</p>
+<p>Para trabajar con estos tipos de documentos, lo más recomendable es el uso de RStudio, que en sus últimas versiones, viene equipado con todos los elementos necesarios para ejecutar y compilar correctamente estos documentos.</p>
+<p>La composición de un documento en Rmarkdown es muy sencilla. Para ello tendremos las opción simple, si estamos en RStudio de File&gt;New File&gt;R Markdown, que nos generará una plantilla con los elementos básicos para la confección del documento. En ella, destacan los tres elementos fundamentales:</p>
+<ul>
+<li>El encabezado YAML, donde se definen las características del documento:</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="publication.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb2-2"><a href="publication.html#cb2-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">&quot;Untitled&quot;</span></span>
+<span id="cb2-3"><a href="publication.html#cb2-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">&quot;Julio M. Sevilla&quot;</span></span>
+<span id="cb2-4"><a href="publication.html#cb2-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">&quot;20/6/2019&quot;</span></span>
+<span id="cb2-5"><a href="publication.html#cb2-5" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span> html_document</span>
+<span id="cb2-6"><a href="publication.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
+<ul>
+<li>Todos los elementos de texto del documento, escritos en markdown:</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="publication.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## R Markdown</span></span>
+<span id="cb3-2"><a href="publication.html#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="publication.html#cb3-3" aria-hidden="true" tabindex="-1"></a>This is an R Markdown document. </span></code></pre></div>
+<ul>
+<li><p>Los fragmentos de código o chunks de R, iniciados con <code>```{r}</code> y finalizados con <code>```</code>.
+Dentro de <code>```{r}</code> podremos incluir desde el nombre del chunk (que nos permitirá identificarlo rapidamente) a acciones omo que no se ejecute, no se muestre el código,etc. tal que, por ejemplo <code>```{r coches, eval=FALSE}</code>. En concreto:</p>
+<ul>
+<li><code>include = FALSE</code> impide que el código y los resultados aparezcan en el archivo terminado, si bien los resultados existirán en la memoria.</li>
+<li><code>echo = FALSE</code> impide que el código, pero no los resultados, aparezcan en el archivo terminado. Esta es una forma útil de incrustar figuras y datos donde no importa tanto como se construye si no el resultado final</li>
+<li><code>message = FALSE</code> impide que los mensajes generados por el código aparezcan en el archivo terminado.</li>
+<li><code>warning = FALSE</code> impide que las advertencias generadas por el código aparezcan en el terminado.</li>
+<li><code>fig.cap = "..."</code> agrega un título a los resultados gráficos.</li>
+</ul></li>
+</ul>
+<p>En relación a esto último, si deseamos establecer opciones globales que se aplican a cada fragmento del archivo, podemos crear un fragmento de código inicial en el que introduciremos <code>knitr::opts_chunk$set()</code> y añadiendo dentro del paréntesis las distintas acciones que deseemos (cuando creamos un nuevo script de RMarkdown veremos que este fragmento inicial se crea por defecto con <code>echo = TRUE</code>)</p>
+<p>Cuando compilemos el documento, previo guardado en nuestra computadora, a traves de pulsar en el botón Knit de RStudio, se generará un documento, en este caso en formato <code>HTML</code>, listo para impresión y con los resultados de nuestro análisis.</p>
+<p>En <a href="https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf</a> Tenemos una guía completa de lenguaje (tambien podemos acceder a ella en RStudio desde Help&gt;Cheetsheets)</p>
+</div>
+<div id="pandoc-y-la-conversión-entre-formatos." class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Pandoc y la conversión entre formatos.</h2>
+<p>Pandoc es una herramienta de libre y de código abierto, creado por John MacFarlane y que permite la conversión entre múltiples formatos de marcado a partir de un motor de renderizado común:</p>
+<p><img src="images/diagram.png" /></p>
+<p>Basicamente, el trabajo con pandoc consiste en que, una vez tengamos creado el documento, para lo cual recomendamos se haga en Markdown, el motor de renderizado de Pandoc lo convertira en el formato que deseemos.</p>
+</div>
+<div id="instalación-de-los-elementos-necesarios" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Instalación de los elementos necesarios</h2>
+<p>Para comenzar deberemos instalar todas las librerias que a priori vamos a necesitar para gestionar nuestros documentos científicos:</p>
+<ul>
+<li>En el caso de que usemos RStudio no será necesario, pero en caso contrario es obligatorio la instalación de Pandoc</li>
+<li>Con RStudio, solo deberemos instalar la librería <code>rmarkdown</code> sin tener que ejecutar el paso anterior</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="publication.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&#39;rmarkdown&#39;</span>)</span></code></pre></div>
+<ul>
+<li>En general querremos derivar el resultado final en pdf, pero para ello, antes deberemos instalar LaTeX. La forma más sencilla de ejecutar este paso es mediante la instalación de la librería <code>TinyTeX</code>. Debemos tener en cuenta que esta librería, para instalarse necesita de Rtools en nuestro Pc, por lo que si no lo tenemos deberemos instalarlo.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="publication.html#cb5-1" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
+<p>En ocasiones, la instalación de <code>TinyTeX</code> deriva en problemas y no se pueden compilar los documentos. Si esto ocurre, deberemos instalar <a href="https://miktex.org/">MiKTeX</a> (en el caso de que nuestro sistema operativo sea Windows). Al hacerlo, deberemos indicarle que instale todas las aplicaciones necesarias:</p>
+<p><img src="images/Miktex_1.png" /></p>
+<p>Si ya tenemos este software instalado en nuestro PC, deberemos ir a la configuración y en Settings, elegir la opción <code>Always install missing packages on-the-fly</code>.</p>
+</div>
+<div id="el-lenguaje-latex" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> El lenguaje LaTeX</h2>
+<p>Anteriormente hemos apuntado que para generar el formato <code>pdf</code> es necesario pasar por un paso previo, instalar <code>LaTeX</code>, en concreto el sistema que nos permite su compilación. LaTeX es un sistema de preparación de documentos por comandos de bajo nivel, usado para escribir grandes textos científicos y técnicos, que fue desarrollado en 1985 por Leslie Lamport y que a diferencia de los procesadores de texto actuales WYSIWYG, permite al escritor centrarse en el contenido sin tener que preocuparse por el formato, algo que realizará el sistema LaTeX.</p>
+<p>A grandes rasgos, un documento en LaTeX se compone de la siguiente estructura:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="publication.html#cb6-1" aria-hidden="true" tabindex="-1"></a>\documentclass[opciones]{clase}</span>
+<span id="cb6-2"><a href="publication.html#cb6-2" aria-hidden="true" tabindex="-1"></a>Preámbulo</span>
+<span id="cb6-3"><a href="publication.html#cb6-3" aria-hidden="true" tabindex="-1"></a>\begin{document}</span>
+<span id="cb6-4"><a href="publication.html#cb6-4" aria-hidden="true" tabindex="-1"></a>Documento</span>
+<span id="cb6-5"><a href="publication.html#cb6-5" aria-hidden="true" tabindex="-1"></a>\end{document}</span></code></pre></div>
+<p>En las opciones se definirán al menos el tamaño del papel (por ejemplo, <code>a4paper</code>) y el tamaño de letra (por ejemplo, <code>12pt</code>).</p>
+<p>Si queremos ahondar más en la escritura con LaTeX recomendamos la lectura del documento <a href="%22Preparación%20de%20Documentos%20con%20LaTeX%22">https://www.uv.es/~ivorra/Latex/LaTeX.pdf</a> de Carlos Ivorra.</p>
+<p>En un documento de Rmarkdown, la generación de un documento en LaTeX es muy sencillo si tenemos ya instaladas las librerias citadas antes. Con ello, solo deberemos configurar el encabezado de nuestro documento como:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="publication.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb7-2"><a href="publication.html#cb7-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">&quot;Untitled&quot;</span></span>
+<span id="cb7-3"><a href="publication.html#cb7-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">&quot;Julio M. Sevilla&quot;</span></span>
+<span id="cb7-4"><a href="publication.html#cb7-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">&quot;20/6/2019&quot;</span></span>
+<span id="cb7-5"><a href="publication.html#cb7-5" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span></span>
+<span id="cb7-6"><a href="publication.html#cb7-6" aria-hidden="true" tabindex="-1"></a>  html_document<span class="sc">:</span></span>
+<span id="cb7-7"><a href="publication.html#cb7-7" aria-hidden="true" tabindex="-1"></a>    toc<span class="sc">:</span> true</span>
+<span id="cb7-8"><a href="publication.html#cb7-8" aria-hidden="true" tabindex="-1"></a>  pdf_document<span class="sc">:</span></span>
+<span id="cb7-9"><a href="publication.html#cb7-9" aria-hidden="true" tabindex="-1"></a>    keep_tex<span class="sc">:</span> true</span>
+<span id="cb7-10"><a href="publication.html#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
+<p>De esta forma, donde se haya guardado el documento <code>Rmd</code> tambien se generarán los documentos compilados en <code>HTML</code>, <code>pdf</code> y <code>tex</code>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="install.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="other-pubs.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["rpub2.pdf", "rpub2.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

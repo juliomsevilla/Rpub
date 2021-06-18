@@ -1,7 +1,7 @@
 --- 
 title: "Publicación de textos científicos con R"
 author: "Julio M. Sevilla Sánchez"
-date: "`r Sys.Date()`"
+date: "2021-06-18"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]

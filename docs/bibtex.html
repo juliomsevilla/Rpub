@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 5 Gestión de bibliografías con Bibtex | Publicación de textos científicos con R</title>
+  <meta name="description" content="Texto introductorio a la redacción y publicación de textos científicos con R y RMarkdown" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 5 Gestión de bibliografías con Bibtex | Publicación de textos científicos con R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Texto introductorio a la redacción y publicación de textos científicos con R y RMarkdown" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 5 Gestión de bibliografías con Bibtex | Publicación de textos científicos con R" />
+  
+  <meta name="twitter:description" content="Texto introductorio a la redacción y publicación de textos científicos con R y RMarkdown" />
+  
+
+<meta name="author" content="Julio M. Sevilla Sánchez" />
+
+
+<meta name="date" content="2021-06-18" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="other-pubs.html"/>
+<link rel="next" href="about.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Publicación de textos científicos con R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción al lenguaje R</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#que-es-r"><i class="fa fa-check"></i><b>1.1</b> ¿Que es R?</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#por-qué-usar-r"><i class="fa fa-check"></i><b>1.2</b> ¿Por qué usar R?</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#recursos-sobre-r"><i class="fa fa-check"></i><b>1.3</b> Recursos sobre R</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="install.html"><a href="install.html"><i class="fa fa-check"></i><b>2</b> Instalación de R, RStudio y librerias</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="install.html"><a href="install.html#instalación-de-r"><i class="fa fa-check"></i><b>2.1</b> Instalación de R</a></li>
+<li class="chapter" data-level="2.2" data-path="install.html"><a href="install.html#actualización-de-r"><i class="fa fa-check"></i><b>2.2</b> Actualización de R</a></li>
+<li class="chapter" data-level="2.3" data-path="install.html"><a href="install.html#el-sistema-r"><i class="fa fa-check"></i><b>2.3</b> El Sistema R</a></li>
+<li class="chapter" data-level="2.4" data-path="install.html"><a href="install.html#las-librerias-de-r"><i class="fa fa-check"></i><b>2.4</b> Las librerias de R</a></li>
+<li class="chapter" data-level="2.5" data-path="install.html"><a href="install.html#interfaces-gráficas-de-r"><i class="fa fa-check"></i><b>2.5</b> Interfaces gráficas de R</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="install.html"><a href="install.html#rcommander"><i class="fa fa-check"></i><b>2.5.1</b> Rcommander</a></li>
+<li class="chapter" data-level="2.5.2" data-path="install.html"><a href="install.html#rstudio"><i class="fa fa-check"></i><b>2.5.2</b> RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="publication.html"><a href="publication.html"><i class="fa fa-check"></i><b>3</b> Markdown, LaTeX y Pandoc</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="publication.html"><a href="publication.html#la-escritura-con-markdown"><i class="fa fa-check"></i><b>3.1</b> La escritura con Markdown</a></li>
+<li class="chapter" data-level="3.2" data-path="publication.html"><a href="publication.html#rmarkdown"><i class="fa fa-check"></i><b>3.2</b> Rmarkdown</a></li>
+<li class="chapter" data-level="3.3" data-path="publication.html"><a href="publication.html#pandoc-y-la-conversión-entre-formatos."><i class="fa fa-check"></i><b>3.3</b> Pandoc y la conversión entre formatos.</a></li>
+<li class="chapter" data-level="3.4" data-path="publication.html"><a href="publication.html#instalación-de-los-elementos-necesarios"><i class="fa fa-check"></i><b>3.4</b> Instalación de los elementos necesarios</a></li>
+<li class="chapter" data-level="3.5" data-path="publication.html"><a href="publication.html#el-lenguaje-latex"><i class="fa fa-check"></i><b>3.5</b> El lenguaje LaTeX</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="other-pubs.html"><a href="other-pubs.html"><i class="fa fa-check"></i><b>4</b> Otras de formas de publicación en R</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="other-pubs.html"><a href="other-pubs.html#notebooks"><i class="fa fa-check"></i><b>4.1</b> Notebooks</a></li>
+<li class="chapter" data-level="4.2" data-path="other-pubs.html"><a href="other-pubs.html#presentaciones"><i class="fa fa-check"></i><b>4.2</b> Presentaciones</a></li>
+<li class="chapter" data-level="4.3" data-path="other-pubs.html"><a href="other-pubs.html#páginas-web-y-libros"><i class="fa fa-check"></i><b>4.3</b> Páginas web y libros</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="other-pubs.html"><a href="other-pubs.html#bookdown"><i class="fa fa-check"></i><b>4.3.1</b> Bookdown</a></li>
+<li class="chapter" data-level="4.3.2" data-path="other-pubs.html"><a href="other-pubs.html#distill"><i class="fa fa-check"></i><b>4.3.2</b> Distill</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="other-pubs.html"><a href="other-pubs.html#cuadros-de-mando"><i class="fa fa-check"></i><b>4.4</b> Cuadros de mando</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="other-pubs.html"><a href="other-pubs.html#flexdashboard"><i class="fa fa-check"></i><b>4.4.1</b> Flexdashboard</a></li>
+<li class="chapter" data-level="4.4.2" data-path="other-pubs.html"><a href="other-pubs.html#shinny"><i class="fa fa-check"></i><b>4.4.2</b> Shinny</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="bibtex.html"><a href="bibtex.html"><i class="fa fa-check"></i><b>5</b> Gestión de bibliografías con Bibtex</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="bibtex.html"><a href="bibtex.html#sobre-bibtex"><i class="fa fa-check"></i><b>5.1</b> Sobre Bibtex</a></li>
+<li class="chapter" data-level="5.2" data-path="bibtex.html"><a href="bibtex.html#referencias-bibliográficas-en-rmarkdown."><i class="fa fa-check"></i><b>5.2</b> Referencias bibliográficas en Rmarkdown.</a></li>
+<li class="chapter" data-level="5.3" data-path="bibtex.html"><a href="bibtex.html#la-documentación-de-los-paquetes"><i class="fa fa-check"></i><b>5.3</b> La documentación de los paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="about.html"><a href="about.html"><i class="fa fa-check"></i><b>6</b> Sobre el autor</a></li>
+<li class="chapter" data-level="7" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i><b>7</b> Bibliografía</a></li>
+<li class="divider"></li>
+<li><a href="www.jsevilla.es" target="blank">jsevilla.es</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Publicación de textos científicos con R</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="bibtex" class="section level1" number="5">
+<h1><span class="header-section-number">Capítulo 5</span> Gestión de bibliografías con Bibtex</h1>
+<div id="sobre-bibtex" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Sobre Bibtex</h2>
+<p><a href="http://www.bibtex.org/">Bibtex</a> es una herramienta auxiliar de LaTeX, diseñada para facilitar el manejo de la bibliografía y es un estandar de almacenamiento de referencias. Su uso es muy sencillo: a modo de base de datos, en un fichero con extensión <code>bib</code> alamacenaremos todas nuestras referencias bibliográficas, independientemente de que las usemos o no en el documento actual, algo que es una gran ventaja, pues podremos crear nuestro fichero, único, de referencias bibliográficas, que usaremos en todos nuestros proyectos.</p>
+<p>La cita de la fuente es muy sencilla:simplemente, en nuestro documento LaTeX, deberemos llamar al identificador de la referencia, para que el compilador la muestre de forma adecuada. Veamos unos ejemplos:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="bibtex.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="sc">@</span>Manual{R<span class="sc">-</span>base,</span>
+<span id="cb10-2"><a href="bibtex.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  title <span class="ot">=</span> {R<span class="sc">:</span> A Language and Environment <span class="cf">for</span> Statistical Computing},</span>
+<span id="cb10-3"><a href="bibtex.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  author <span class="ot">=</span> {{R Core Team}},</span>
+<span id="cb10-4"><a href="bibtex.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  organization <span class="ot">=</span> {R Foundation <span class="cf">for</span> Statistical Computing},</span>
+<span id="cb10-5"><a href="bibtex.html#cb10-5" aria-hidden="true" tabindex="-1"></a>  address <span class="ot">=</span> {Vienna, Austria},</span>
+<span id="cb10-6"><a href="bibtex.html#cb10-6" aria-hidden="true" tabindex="-1"></a>  year <span class="ot">=</span> {<span class="dv">2019</span>},</span>
+<span id="cb10-7"><a href="bibtex.html#cb10-7" aria-hidden="true" tabindex="-1"></a>  url <span class="ot">=</span> {https<span class="sc">:</span><span class="er">//</span>www.R<span class="sc">-</span>project.org<span class="sc">/</span>},</span>
+<span id="cb10-8"><a href="bibtex.html#cb10-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb10-9"><a href="bibtex.html#cb10-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="bibtex.html#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="sc">@</span>article{article12,</span>
+<span id="cb10-11"><a href="bibtex.html#cb10-11" aria-hidden="true" tabindex="-1"></a>  author  <span class="ot">=</span> {Peter Adams}, </span>
+<span id="cb10-12"><a href="bibtex.html#cb10-12" aria-hidden="true" tabindex="-1"></a>  title   <span class="ot">=</span> {The title of the work},</span>
+<span id="cb10-13"><a href="bibtex.html#cb10-13" aria-hidden="true" tabindex="-1"></a>  journal <span class="ot">=</span> {The name of the journal},</span>
+<span id="cb10-14"><a href="bibtex.html#cb10-14" aria-hidden="true" tabindex="-1"></a>  year    <span class="ot">=</span> <span class="dv">1993</span>,</span>
+<span id="cb10-15"><a href="bibtex.html#cb10-15" aria-hidden="true" tabindex="-1"></a>  number  <span class="ot">=</span> <span class="dv">2</span>,</span>
+<span id="cb10-16"><a href="bibtex.html#cb10-16" aria-hidden="true" tabindex="-1"></a>  pages   <span class="ot">=</span> {<span class="dv">201-213</span>},</span>
+<span id="cb10-17"><a href="bibtex.html#cb10-17" aria-hidden="true" tabindex="-1"></a>  month   <span class="ot">=</span> <span class="dv">7</span>,</span>
+<span id="cb10-18"><a href="bibtex.html#cb10-18" aria-hidden="true" tabindex="-1"></a>  note    <span class="ot">=</span> {An optional note}, </span>
+<span id="cb10-19"><a href="bibtex.html#cb10-19" aria-hidden="true" tabindex="-1"></a>  volume  <span class="ot">=</span> <span class="dv">4</span></span>
+<span id="cb10-20"><a href="bibtex.html#cb10-20" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>En estos casos, el identificador de cada referencia es el texto que va a continuación de {, <code>R-base</code> o <code>article12</code>.</p>
+<p>En internet, podremos encontrar software específico para gestionar nuestros ficheros <code>bib</code> como <a href="https://truben.no/latex/bibtex/" class="uri">https://truben.no/latex/bibtex/</a> o <a href="http://www.jabref.org/" class="uri">http://www.jabref.org/</a> aunque, si bien, el fichero <code>bib</code>no es más que un fichero de texto, por lo que cualquier editor (hasta el simple notepad del sistema nos servirá).</p>
+</div>
+<div id="referencias-bibliográficas-en-rmarkdown." class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Referencias bibliográficas en Rmarkdown.</h2>
+<p>Existen varias formas de gestionar las referencias bibliográficas en el documento, pero lo más recomendable es trabajar con el estilo de citas BiBtex y el almacenamiento en este formato, especialmente si el resultado buscado es <code>pdf</code> y/o <code>tex</code>.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="bibtex.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="sc">@</span>Manual{R<span class="sc">-</span>base,</span>
+<span id="cb11-2"><a href="bibtex.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  title <span class="ot">=</span> {R<span class="sc">:</span> A Language and Environment <span class="cf">for</span> Statistical</span>
+<span id="cb11-3"><a href="bibtex.html#cb11-3" aria-hidden="true" tabindex="-1"></a>    Computing},</span>
+<span id="cb11-4"><a href="bibtex.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  author <span class="ot">=</span> {{R Core Team}},</span>
+<span id="cb11-5"><a href="bibtex.html#cb11-5" aria-hidden="true" tabindex="-1"></a>  organization <span class="ot">=</span> {R Foundation <span class="cf">for</span> Statistical Computing},</span>
+<span id="cb11-6"><a href="bibtex.html#cb11-6" aria-hidden="true" tabindex="-1"></a>  address <span class="ot">=</span> {Vienna, Austria},</span>
+<span id="cb11-7"><a href="bibtex.html#cb11-7" aria-hidden="true" tabindex="-1"></a>  year <span class="ot">=</span> {<span class="dv">2019</span>},</span>
+<span id="cb11-8"><a href="bibtex.html#cb11-8" aria-hidden="true" tabindex="-1"></a>  url <span class="ot">=</span> {https<span class="sc">:</span><span class="er">//</span>www.R<span class="sc">-</span>project.org<span class="sc">/</span>},</span>
+<span id="cb11-9"><a href="bibtex.html#cb11-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>Para que Rmarkdown reconozca la cita, deberemos añadir a nuestro encabezado YAML la ruta donde almacenaremos todas nuestras referencias bibliográficas (nuestra base de datos en formato <code>bib</code>). Si este se ubica en el mismo lugar que el fichero <code>Rmd</code> podremos usar simplemente:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="bibtex.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb12-2"><a href="bibtex.html#cb12-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">&quot;Untitled&quot;</span></span>
+<span id="cb12-3"><a href="bibtex.html#cb12-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">&quot;Julio M. Sevilla&quot;</span></span>
+<span id="cb12-4"><a href="bibtex.html#cb12-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">&quot;20/6/2019&quot;</span></span>
+<span id="cb12-5"><a href="bibtex.html#cb12-5" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span> html_document</span>
+<span id="cb12-6"><a href="bibtex.html#cb12-6" aria-hidden="true" tabindex="-1"></a>bibliography<span class="sc">:</span> bibliografia.bib</span>
+<span id="cb12-7"><a href="bibtex.html#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
+<p>Por otro lado, en el documento que estemos escribiendo, será tan simple como usar la llamada que hayamos definido con anterioridad en nuestra base de datos: en este ejemplo, <code>@R-base</code> que generará “<span class="citation"><a href="#ref-R-base" role="doc-biblioref">R Core Team</a> (<a href="#ref-R-base" role="doc-biblioref">2020</a>)</span>” o <code>[@R-base]</code> que creará “<span class="citation">(<a href="#ref-R-base" role="doc-biblioref">R Core Team 2020</a>)</span>.” Pandoc, a su vez, creará un listado de referencias bibliográficas al final del documento. Este listado, se basa en el <a href="https://www.chicagomanualofstyle.org/tools_citationguide/citation-guide-2.html">manual de estilo de Chicago</a> por lo que si deseamos otro, lo deberemos definir a partir de un fichero <code>csl</code> (un manual muy util es <a href="http://docs.citationstyles.org/en/1.0.1/primer.html">http://docs.citationstyles.org/en/1.0.1/primer.html</a>), el cual debe tambien incluirse en el YAML:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="bibtex.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb13-2"><a href="bibtex.html#cb13-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">&quot;Untitled&quot;</span></span>
+<span id="cb13-3"><a href="bibtex.html#cb13-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">&quot;Julio M. Sevilla&quot;</span></span>
+<span id="cb13-4"><a href="bibtex.html#cb13-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">&quot;20/6/2019&quot;</span></span>
+<span id="cb13-5"><a href="bibtex.html#cb13-5" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span> html_document</span>
+<span id="cb13-6"><a href="bibtex.html#cb13-6" aria-hidden="true" tabindex="-1"></a>bibliography<span class="sc">:</span> bibliografia.bib</span>
+<span id="cb13-7"><a href="bibtex.html#cb13-7" aria-hidden="true" tabindex="-1"></a>csl<span class="sc">:</span> biomed<span class="sc">-</span>central.csl</span>
+<span id="cb13-8"><a href="bibtex.html#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
+</div>
+<div id="la-documentación-de-los-paquetes" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> La documentación de los paquetes</h2>
+<p>Como sabemos todos los paquetes o librerias que usamos en R deben ser correctamente referidos. Evidentemente, esta gestión dentro del propio R es muy sencillo. Para ello, al comenzar nuestro documento Rmarkdown, podemos definir un comando para que nos cree automaticamente las referencias bibliográficas adecuadas de cada paquete mediante la sintaxis:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="bibtex.html#cb14-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">write_bib</span>(<span class="fu">c</span>(<span class="fu">.packages</span>(), <span class="st">&#39;ggplot2&#39;</span>, <span class="st">&#39;nlme&#39;</span>), <span class="st">&#39;packages.bib&#39;</span>)</span></code></pre></div>
+<p>Por supuesto, ahora, tendremos que decirle al compilador que debe “buscar” en dos ficheros <code>bib</code> para lo cual deberemos extender el YAML de la siguente forma:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="bibtex.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span>
+<span id="cb15-2"><a href="bibtex.html#cb15-2" aria-hidden="true" tabindex="-1"></a>title<span class="sc">:</span> <span class="st">&quot;Untitled&quot;</span></span>
+<span id="cb15-3"><a href="bibtex.html#cb15-3" aria-hidden="true" tabindex="-1"></a>author<span class="sc">:</span> <span class="st">&quot;Julio M. Sevilla&quot;</span></span>
+<span id="cb15-4"><a href="bibtex.html#cb15-4" aria-hidden="true" tabindex="-1"></a>date<span class="sc">:</span> <span class="st">&quot;20/6/2019&quot;</span></span>
+<span id="cb15-5"><a href="bibtex.html#cb15-5" aria-hidden="true" tabindex="-1"></a>output<span class="sc">:</span> html_document</span>
+<span id="cb15-6"><a href="bibtex.html#cb15-6" aria-hidden="true" tabindex="-1"></a>bibliography<span class="sc">:</span> [<span class="st">&quot;packages.bib&quot;</span>, <span class="st">&quot;bibliografia.bib&quot;</span>]</span>
+<span id="cb15-7"><a href="bibtex.html#cb15-7" aria-hidden="true" tabindex="-1"></a><span class="sc">---</span></span></code></pre></div>
+<p>De esta forma, se generará, automaticamente, un fichero específico, en formato <code>bib</code>con las referencias bibliográficas de todos los paquetes que le digamos y despues será tan simple, como, de nuevo, escribir en el texto markdown la referencia al paquete a modo <code>@R-nlme</code> o <code>@R-ggplot2</code> generando, en el primer caso: <span class="citation"><a href="#ref-R-nlme" role="doc-biblioref">Pinheiro, Bates, and R-core</a> (<a href="#ref-R-nlme" role="doc-biblioref">2018</a>)</span></p>
+
+</div>
+</div>
+<h3> Bibliografía</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-R-nlme" class="csl-entry">
+Pinheiro, José, Douglas Bates, and R-core. 2018. <em>Nlme: Linear and Nonlinear Mixed Effects Models</em>. <a href="https://CRAN.R-project.org/package=nlme">https://CRAN.R-project.org/package=nlme</a>.
+</div>
+<div id="ref-R-base" class="csl-entry">
+R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="other-pubs.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="about.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["rpub2.pdf", "rpub2.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
