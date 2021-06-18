@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Markdown, LaTeX y Pandoc {#publication}
 
 ## La escritura con Markdown
@@ -17,7 +22,7 @@ Para trabajar con estos tipos de documentos, lo más recomendable es el uso de R
 
 La composición de un documento en Rmarkdown es muy sencilla. Para ello tendremos las opción simple, si estamos en RStudio de File>New File>R Markdown, que nos generará una plantilla con los elementos básicos para la confección del documento. En ella, destacan los tres elementos fundamentales:
 
-- El encabezado YAML, donde se definen las características del documento:
+* El encabezado YAML, donde se definen las características del documento:
 ```{r, eval=FALSE}
 ---
 title: "Untitled"
@@ -27,7 +32,7 @@ output: html_document
 ---
 ```
 
-- Todos los elementos de texto del documento, escritos en markdown:
+* Todos los elementos de texto del documento, escritos en markdown:
 
 ```{r, eval=FALSE}
 ## R Markdown
@@ -35,14 +40,23 @@ output: html_document
 This is an R Markdown document. 
 ```
 
-- Y, los fragmentos de código o chunks de R, iniciados con ` ```{r} ` y finalizados con ` ``` `. 
-Dentro de ` ```{r} ` podremos incluir desde el nombre del chunk (que nos permitirá identificarlo rapidamente) a acciones omo que no se ejecute, no se muestre el código,etc. tal que, por ejemplo ` ```{r coches, eval=FALSE} `.
+* Los fragmentos de código o chunks de R, iniciados con ` ```{r} ` y finalizados con ` ``` `. 
+Dentro de ` ```{r} ` podremos incluir desde el nombre del chunk (que nos permitirá identificarlo rapidamente) a acciones omo que no se ejecute, no se muestre el código,etc. tal que, por ejemplo ` ```{r coches, eval=FALSE} `. En concreto:
+
+  + `include = FALSE` impide que el código y los resultados aparezcan en el archivo terminado, si bien los resultados existirán en la memoria. 
+  + `echo = FALSE`  impide que el código, pero no los resultados, aparezcan en el archivo terminado. Esta es una forma útil de incrustar figuras y datos donde no importa tanto como se construye si no el resultado final
+  + `message = FALSE` impide que los mensajes generados por el código aparezcan en el archivo terminado.
+  + `warning = FALSE` impide que las advertencias generadas por el código aparezcan en el terminado.
+  + `fig.cap = "..."` agrega un título a los resultados gráficos.
+
+En relación a esto último, si deseamos establecer opciones globales que se aplican a cada fragmento del archivo, podemos crear un fragmento de código inicial en el que introduciremos `knitr::opts_chunk$set()` y añadiendo dentro del paréntesis las distintas acciones que deseemos (cuando creamos un nuevo script de RMarkdown veremos que este fragmento inicial se crea por defecto con `echo = TRUE`)
 
 Cuando compilemos el documento, previo guardado en nuestra computadora, a traves de pulsar en el botón Knit de RStudio, se generará un documento, en este caso en formato `HTML`, listo para impresión y con los resultados de nuestro análisis.
 
+En [https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf](https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf) Tenemos una guía completa de lenguaje (tambien podemos acceder a ella en RStudio desde Help>Cheetsheets)
 
 ## Pandoc y la conversión entre formatos.
-Pandoc es una herramienta de libre y de código abierto, creado porJohn MacFarlane y que permite la conversión entre múltiples formatos de marcado a partir de un motor de renderizado común:
+Pandoc es una herramienta de libre y de código abierto, creado por John MacFarlane y que permite la conversión entre múltiples formatos de marcado a partir de un motor de renderizado común:
 
 ![](https://github.com/juliomsevilla/Rpub/raw/master/images/diagram.png)
 

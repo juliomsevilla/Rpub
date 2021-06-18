@@ -17,6 +17,8 @@ Además de generar reportes en pdf, html, docx,..., cuando generamos nuestro fic
 ## Páginas web y libros
 Con Rmarkdown y RStudio, podremos desarrollar páginas web estáticas muy facilmente. Ya hemos visto lo sencillo que es generar un fichero `HTML` por lo que si disponemos de un hospedaje web podremos subirlo y disponibilizarlo de forma pública.
 
+### Bookdown
+
 Una opción que da un paso más allá es la librería `bookdown`. Mediante esta libreria, podremos escribir libros y publicarlos online empleando R Markdown de forma rápida y sencilla, por loq ue se convierte en la forma ideal de generar el documento y, asu vez publicarlo. Para publicarlo, podemos usar repositorios como [Github](https://github.com) o [Gitlab](https://gitlab.com/), que nos ofrecen un almacenamiento gratuito.
 
 Existen varias formas para generar un documento de este tipo, pero sin duda la más sencilla es instalar la libreria con `devtools::install_github('rstudio/bookdown')`, crear un proyecto en RStudio, clonando el repositorio [https://github.com/yihui/bookdown-minimal.git](https://github.com/yihui/bookdown-minimal.git) y, además de generar nuestro contenido deberemos editar la cabecera del fichero `index.Rmd`:
@@ -59,7 +61,7 @@ pages:
 
 ```
 
-Si deseamos hacer en Github, deberemos realizar lo sigueinte:
+Si deseamos hacer en Github, deberemos realizar lo siguiente:
 
 - Crear el directorio `docs` dentro del repositorio creado
 - Incluir dentro del directorio `docs` incluir el contenido de nuestro libro
@@ -67,9 +69,21 @@ Si deseamos hacer en Github, deberemos realizar lo sigueinte:
 - Finalmente, en Github, tendremos que decirle que nuestro master branch es `\docs\`:
 
 ![](https://github.com/juliomsevilla/Rpub/raw/master/images/github_bookdown.png)
+Otra opción, quizás más sencilla es usar las posibilidades del paquete RStudio Connect `rsconnect`, un producto de RStudio que le permite implementar una variedad de aplicaciones relacionadas con R hacia un servidor, incluyendo documentos R Markdown, aplicaciones Shiny, gráficos de R, etc. Instalando previamente esta librería, podremos subir nuestro nuevo libro digital a los servidores de [bookdown.org](https://bookdown.org/) mediante el comando `bookdown::publish_book("usuario")`, disponiendo en *usuario*, nuestro identificador (si no tenemos cuenta aún, en el proceso, nos facilitará crearla).
 
 
 
+
+### Distill
+Si bien `Bookdown` está muy centrado en la redacción científica, el paquete [`Distill`](https://pkgs.rstudio.com/distill/) es multipropósito, y nos servirá para crear facilmente blogs y webs estáticas.
+
+Para ello, instalaremos la susodicha librería (`install.packages("distill")`) y, una vez instalado, desde RStudio, podremos genera un nuevo proyecto de web o blog, mediante File>New Project>New Directory y, de las opciones elegimos Distill Blog o Distill Website
+
+Una vez lo nombremos y lo guardemos en la ruta que elijamos, nos generará varios ficheros tales como el encabezado (`_site.yml`), la portada (`index.Rmd`), poágina de presentación (`about.Rmd`),... así como entradas de blog ficticias o páginas web, que podremos en todos los casos cambiar y reconfigurar.
+
+LA creación o modificación de páginas es muy sencilla, ya que en todo momento usaremos `Rmarkdown`para escribir y posteriormente, para crear la página en lenguaje `html` deberemois "tejer" la misma, mediante el comando `knitr`. Para finalizar y montar la web completa, procedemos a pulsar sobre la pestaña `Build` de RStudio que se encargará de montarlo todo.
+
+Para añadir nuevas páginas o post, en la consola de comandos, deberemos ejecutar `distill::create_post()`con el nombre del post dentro del paréntesis (encerrado en comillas).
 
 ## Cuadros de mando
 

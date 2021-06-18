@@ -1,5 +1,3 @@
-# Textos científicos con LaTex, BibTex y R
+# Textos científicos con R
 
-Este repositorio es un libro escrito en bookdown y que se publica en `GitLab Pages` usando `GitLab CI`.
-
-Para ver más información de como se ha publicado puedes vistar https://rlesur.gitlab.io/bookdown-gitlab-pages
+Este repositorio es un libro escrito en bookdown y que se publica en `Github Pages`
