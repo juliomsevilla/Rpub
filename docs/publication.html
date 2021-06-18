@@ -233,7 +233,7 @@ div.csl-indent {
 <div id="la-escritura-con-markdown" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> La escritura con Markdown</h2>
 <p>Markdown es un lenguaje de marcado ligero ideado en 2004 por John Gruber, con la visión de crear un lenguaje sencillo, fácil de leer y de escribir, aprovechando las ventajas del lenguaje <code>HTML</code> pero eliminando sus inconvenientes, como por ejemplo las etiquetas, que tanto engorran el código. Pongamonos en situación: si estamos escribiendo en <code>HTML</code>, para añadir una palabra en negrita deberíamos escribir <code>&lt;strong&gt;importante&lt;/strong&gt;</code> mientras que si estamos escribiendo en <code>Markdown</code>nos bastaría poner <code>**importante**</code> para que cuando lo compilemos, se muestre de esta forma. Huelga decir, que en un procesador de textos al uso deberemos dejar de escribir, coger el ratón, pulsar en el botón de la negrita, volver a escribir, de nuevo coger el ratón, ir a la barra de herramientas, desactivar el formato de negrita y continuar escribiendo (…). A continuación podemos ver algunos ejemplos de la notación de este lenguaje:</p>
-<p><img src="images/markdown.png" /></p>
+<p><img src="C:/TEMP/rpub2/images/markdown.png" /></p>
 <p>En este punto nos puede asaltar la duda ¿Markdown cubre todo el espectro que cubre <code>HTML</code>? Sí y no, porque si no lo cubre, tan solo tienes que escribir la parte de <code>HTML</code> separado una línea del siguiente párrafo en Markdown.</p>
 <p>Trabajar con Markdown, tiene infinidad de ventajas, pero es especialmente adecuado para aquellas personas que publican contenido en la web de manera regular. Entre otras ventajas cabe citar que cuando te acostumbras a la sintaxis la generación de texto es extremadamente rápido, es muy sencillo de leer, no tendremos el problema de errores por no cerrar adecuadamente las etiquetas <code>HTML</code> y su compilación con software como <a href="https://pandoc.org/"><code>Pandoc</code></a> permite la exportación simple a infinidad de formatos basados en texto.</p>
 </div>
@@ -275,7 +275,7 @@ Dentro de <code>```{r}</code> podremos incluir desde el nombre del chunk (que no
 <div id="pandoc-y-la-conversión-entre-formatos." class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Pandoc y la conversión entre formatos.</h2>
 <p>Pandoc es una herramienta de libre y de código abierto, creado por John MacFarlane y que permite la conversión entre múltiples formatos de marcado a partir de un motor de renderizado común:</p>
-<p><img src="images/diagram.png" /></p>
+<p><img src="C:/TEMP/rpub2/images/diagram.png" /></p>
 <p>Basicamente, el trabajo con pandoc consiste en que, una vez tengamos creado el documento, para lo cual recomendamos se haga en Markdown, el motor de renderizado de Pandoc lo convertira en el formato que deseemos.</p>
 </div>
 <div id="instalación-de-los-elementos-necesarios" class="section level2" number="3.4">
@@ -291,7 +291,7 @@ Dentro de <code>```{r}</code> podremos incluir desde el nombre del chunk (que no
 </ul>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="publication.html#cb5-1" aria-hidden="true" tabindex="-1"></a>tinytex<span class="sc">::</span><span class="fu">install_tinytex</span>()</span></code></pre></div>
 <p>En ocasiones, la instalación de <code>TinyTeX</code> deriva en problemas y no se pueden compilar los documentos. Si esto ocurre, deberemos instalar <a href="https://miktex.org/">MiKTeX</a> (en el caso de que nuestro sistema operativo sea Windows). Al hacerlo, deberemos indicarle que instale todas las aplicaciones necesarias:</p>
-<p><img src="images/Miktex_1.png" /></p>
+<p><img src="C:/TEMP/rpub2/images/Miktex_1.png" /></p>
 <p>Si ya tenemos este software instalado en nuestro PC, deberemos ir a la configuración y en Settings, elegir la opción <code>Always install missing packages on-the-fly</code>.</p>
 </div>
 <div id="el-lenguaje-latex" class="section level2" number="3.5">

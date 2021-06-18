@@ -280,7 +280,7 @@ div.csl-indent {
 <li>Crear dentro del directorio <code>docs</code> un archivo <code>.nojekyll</code>, que, si estamos en Windows, podremos hacer incluso con el comando de R <code>file.create('.nojekyll')</code>.</li>
 <li>Finalmente, en Github, tendremos que decirle que nuestro master branch es <code>\docs\</code>:</li>
 </ul>
-<p><img src="images/github_bookdown.png" />
+<p><img src="C:/TEMP/rpub2/images/github_bookdown.png" />
 Otra opción, quizás más sencilla es usar las posibilidades del paquete RStudio Connect <code>rsconnect</code>, un producto de RStudio que le permite implementar una variedad de aplicaciones relacionadas con R hacia un servidor, incluyendo documentos R Markdown, aplicaciones Shiny, gráficos de R, etc. Instalando previamente esta librería, podremos subir nuestro nuevo libro digital a los servidores de <a href="https://bookdown.org/">bookdown.org</a> mediante el comando <code>bookdown::publish_book("usuario")</code>, disponiendo en <em>usuario</em>, nuestro identificador (si no tenemos cuenta aún, en el proceso, nos facilitará crearla).</p>
 </div>
 <div id="distill" class="section level3" number="4.3.2">
@@ -297,13 +297,13 @@ Otra opción, quizás más sencilla es usar las posibilidades del paquete RStudi
 <div id="flexdashboard" class="section level3" number="4.4.1">
 <h3><span class="header-section-number">4.4.1</span> Flexdashboard</h3>
 <p>La libreria <a href="https://rmarkdown.rstudio.com/flexdashboard/">flexdashboard</a> consiste en un conjunto de utilidades con las que generaremos facilmente cuadros de mando dinámicos. Su uso es bien sencillo; una vez cargada la libreria, cada título que definamos se convertirá en un marco donde podremos depositar la información a mostrar:</p>
-<p><img src="images/flexdash.png" /></p>
+<p><img src="C:/TEMP/rpub2/images/flexdash.png" /></p>
 </div>
 <div id="shinny" class="section level3" number="4.4.2">
 <h3><span class="header-section-number">4.4.2</span> Shinny</h3>
 <p>Shiny se basa en el uso de Programación Reactiva (Reactive Programming), esto es: existen unos valores que pueden variar en el tiempo y que son registrados por unas expresiones que posteriormente las reproducen. Junto a este motor de razonamiento, incorpora adaptadas los clásicos elementos HTML (botones, cuadros de texto, barras de desplazamiento,…) junto con las potentes gráficas de R y su estructura de datos.Básicamente se compone de dos ficheros que se crean en nuestro directorio local: <code>ui.R</code>, que gestiona la salida visual y el aspecto de la aplicación y <code>server.R</code> con las instrucciones para que la misma función, siendo en esta última donde se embebe el motor de cálculo en realizado en R. En las últimas versiones del paquete, ambos ficheros vienen embebidos en uno solo <code>app.R</code>. Estos archivos son publicados en nuestro servidor web o en las distintas plataformas que lo interpreten como GitHub.</p>
-<p><img src="images/shinny1.png" />
-<img src="images/shinny2.png" /></p>
+<p><img src="C:/TEMP/rpub2/images/shinny1.png" />
+<img src="C:/TEMP/rpub2/images/shinny2.png" /></p>
 <p>Las posibilidades de Shiny se amplían al admitir incorporaciones al código nativo de todos los elementos que actualmente conforman los ecosistemas HTML, CSS y Javascript, lo que implica que los desarrollos que se puedan hacer con esta herramienta son casi ilimitados. Esto la convierte en una herramienta muy poderosa para la construcción de cuadros de mando y para mostrar los resultados de nuestros desarrollos usando las capacidades analíticas de R, de forma que el receptor de nuestra información pueda interactuar fácilmente con ella (por ejemplo <a href="https://juliomsevilla.shinyapps.io/ModeloGlobulusHuelva/">como en este caso</a>).</p>
 
 </div>
